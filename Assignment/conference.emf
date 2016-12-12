@@ -1,0 +1,85 @@
+@namespace(uri="conference", prefix ="")
+package conference;
+
+class Conference{
+	val Attendee [*] attendee;
+	val Table [*] table;
+}
+
+class Table{
+ attr int number;
+ attr int capacity;
+ ref Attendee attendees;
+ attr Boolean occupied;
+}
+
+
+class Attendee{
+	attr Title title;
+	attr String name;
+	attr String affliation;
+	val Language [*] language;
+	val Allergie [*] allergie;
+	val Subject [*] subject;
+	val Choice [*] choice;
+	
+	
+}
+class Choice{
+    ref Attendee attendee;
+	attr Choices choices;
+	
+}
+enum Choices{
+	Friend;
+	Enemy;
+}
+
+class Subject {
+attr Subjects subjects;
+	
+	
+}
+enum Subjects{
+	Computer_Science;
+	Maths;
+	English;
+	History;
+	Biology;
+	Religous_studies;
+}
+class Allergie {
+	attr Allergies allergie;
+}
+enum Allergies{
+	Dust;
+	Meat;
+	Fish;
+	Milk;
+	Cheese;
+	Nothing;
+	
+}
+enum Title{
+	Dr;
+	Professor;
+	Mr;
+	Mrs;
+	Miss;
+	Lord;
+	Ms;
+	Master;
+}
+class Language {
+attr Languages language;
+}
+enum Languages{
+English;
+French;
+Spanish;
+German;
+Swedish;
+Arabic;
+Russian;
+Greek;
+}
