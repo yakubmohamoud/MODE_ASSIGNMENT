@@ -1,0 +1,7 @@
+# Tracing options for the Assignment.diagram plug-in
+
+# Common issues
+Assignment.diagram/debug=false
+
+# Visual IDs
+Assignment.diagram/debug/visualID=false

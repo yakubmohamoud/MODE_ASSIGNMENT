@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated conference -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="conference.presentation.ConferenceModelWizardID"
+            name="%_UI_ConferenceModelWizard_label"
+            class="conference.presentation.ConferenceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ConferenceModelFile.gif">
+         <description>%_UI_ConferenceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated conference -->
+      <editor
+            id="conference.presentation.ConferenceEditorID"
+            name="%_UI_ConferenceEditor_label"
+            icon="icons/full/obj16/ConferenceModelFile.gif"
+            extensions="conference"
+            class="conference.presentation.ConferenceEditor"
+            contributorClass="conference.presentation.ConferenceActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

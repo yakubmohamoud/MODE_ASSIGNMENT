@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/Assignment/src" modelPluginID="Assignment"
+    modelName="Conference" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>conference.emf</foreignModel>
+  <genPackages prefix="Conference" disposableProviderFactory="true" ecorePackage="conference.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="conference.ecore#//Choices">
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Choices/Friend"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Choices/Enemy"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="conference.ecore#//Subjects">
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Subjects/Computer_Science"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Subjects/Maths"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Subjects/English"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Subjects/History"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Subjects/Biology"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Subjects/Religous_studies"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="conference.ecore#//Allergies">
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Allergies/Dust"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Allergies/Meat"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Allergies/Fish"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Allergies/Milk"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Allergies/Cheese"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Allergies/Nothing"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="conference.ecore#//Title">
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Title/Dr"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Title/Professor"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Title/Mr"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Title/Mrs"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Title/Miss"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Title/Lord"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Title/Ms"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Title/Master"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="conference.ecore#//Languages">
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Languages/English"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Languages/French"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Languages/Spanish"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Languages/German"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Languages/Swedish"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Languages/Arabic"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Languages/Russian"/>
+      <genEnumLiterals ecoreEnumLiteral="conference.ecore#//Languages/Greek"/>
+    </genEnums>
+    <genClasses ecoreClass="conference.ecore#//Conference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference conference.ecore#//Conference/attendee"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference conference.ecore#//Conference/table"/>
+    </genClasses>
+    <genClasses ecoreClass="conference.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Table/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Table/capacity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference conference.ecore#//Table/attendees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Table/occupied"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference conference.ecore#//Table/target"/>
+    </genClasses>
+    <genClasses ecoreClass="conference.ecore#//Seat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Seat/seatId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference conference.ecore#//Seat/outgoing"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference conference.ecore#//Seat/incoming"/>
+    </genClasses>
+    <genClasses ecoreClass="conference.ecore#//Attendee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Attendee/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Attendee/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Attendee/affliation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference conference.ecore#//Attendee/seat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference conference.ecore#//Attendee/language"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference conference.ecore#//Attendee/allergie"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference conference.ecore#//Attendee/subject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference conference.ecore#//Attendee/choice"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference conference.ecore#//Attendee/target"/>
+    </genClasses>
+    <genClasses ecoreClass="conference.ecore#//Choice">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference conference.ecore#//Choice/attendee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Choice/choices"/>
+    </genClasses>
+    <genClasses ecoreClass="conference.ecore#//Subject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Subject/subjects"/>
+    </genClasses>
+    <genClasses ecoreClass="conference.ecore#//Allergie">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Allergie/allergie"/>
+    </genClasses>
+    <genClasses ecoreClass="conference.ecore#//Language">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conference.ecore#//Language/language"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

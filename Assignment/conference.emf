@@ -1,46 +1,65 @@
 @namespace(uri="conference", prefix ="")
 package conference;
 
+@gmf.diagram
 class Conference{
 	val Attendee [*] attendee;
 	val Table [*] table;
+	
 }
-
+@gmf.node(label = "name")
 class Table{
+
  attr int number;
  attr int capacity;
- ref Attendee attendees;
+ ref Attendee [*] attendees;
  attr Boolean occupied;
+  
+ ref Seat#incoming target;
+ 
+}
+@gmf.link(source ="outgoing", target="incoming" , decoration="arrow", style="dash")
+class Seat {
+
+	id attr int seatId;
+	ref Table[*]#source outgoing;   
+	ref Attendee[1] #target incoming;
+	
+	
 }
 
-
 class Attendee{
+
+
 	attr Title title;
 	attr String name;
 	attr String affliation;
+	val Seat seat;
 	val Language [*] language;
 	val Allergie [*] allergie;
 	val Subject [*] subject;
 	val Choice [*] choice;
-	
-	
-}
+	 
+    ref Seat#incoming target;
+	}
+
 class Choice{
+@gmf.node(label = "name")
     ref Attendee attendee;
 	attr Choices choices;
-	
 }
 enum Choices{
 	Friend;
 	Enemy;
 }
 
+
 class Subject {
+@gmf.node(label = "name")
 attr Subjects subjects;
-	
-	
 }
 enum Subjects{
+
 	Computer_Science;
 	Maths;
 	English;
@@ -48,7 +67,9 @@ enum Subjects{
 	Biology;
 	Religous_studies;
 }
+
 class Allergie {
+@gmf.node(label = "name")
 	attr Allergies allergie;
 }
 enum Allergies{
@@ -58,9 +79,9 @@ enum Allergies{
 	Milk;
 	Cheese;
 	Nothing;
-	
 }
 enum Title{
+
 	Dr;
 	Professor;
 	Mr;
@@ -70,7 +91,11 @@ enum Title{
 	Ms;
 	Master;
 }
+
 class Language {
+@gmf.node(label = "name")
+
+
 attr Languages language;
 }
 enum Languages{

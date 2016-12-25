@@ -1,26 +1,102 @@
-// In this script, we query Ecore to find out:
+//This pops up with a popup message prompting the user tp input
+//a string which will be added into the model
 
-// ... how many classes it has
-EClass.all.size().println("All classes: ");
+var newName : String;
+var message : String := "Please provide a name for the file";
+newName := System.user.prompt(message);
+if (newName.isDefined()) {
+  // user hit OK
+var action = new Attendee;
+action.name = newName;
+Conference.all.first().attendee.add(action);
+//This will sort out the seating arrangment by incrementing it by + 1
 
-// ... how many abstract classes it has
-EClass.all.select(c|c.abstract)
-    .size().println("Abstract classes: ");
 
-// ... the names of its classes and how many 
-// features each one has
-"Class names: ".println();
-for (c in EClass.all) {
-    var toPrint = " " + c.name;
-    toPrint = toPrint + "->" + 
-        c.eStructuralFeatures.size();
 
-    toPrint.println();
 }
 
 
 
-for (c in Eclass.all){
-var toPrint = " " +c.name;
-toPrint = toPrint + c.eStrcuturalFeatures.size();
+/*
+
+
+var i : Integer = 0;
+// Change the number 5 to what ever you want the limit to be
+//
+while (i <5){
+// conference is the name of the eml model
+var conference = Conference.all.first();
+i = i+1;
+// seat is the class name and act is the a var name (change it if you want)
+var act = new Seat;
+var numbers;
+// so i find out that this will auto increment by one
+//pretty cool right
+numbers = i + i - i;
+//seatId is the one i want to chance
+act.seatId = numbers;
+//Attendee.all.first().seat.add(act);
+conference.attendee.seat.add(act);
+//"".println("the seat number is" + numbers);
 }
+}
+
+//seats.seatId = seat +1;
+newName.print();
+
+/*
+var frame = new Native ("javax.swing.JFrame");
+var button = new Native ("javax.swing.JButton");
+var panel = new Native ("javax.swing.JPanel");
+var label = new Native ("java.lang.Object");
+button.setSize(50, 50);
+frame.add(panel);
+
+panel.add(button);
+button.setText("Hello");
+frame.setSize(400, 400);
+frame.title = "Opened from EOL";
+frame.visible = true;
+button.setActionCommand("enable");
+button.setEnabled(true);
+
+
+
+//button.
+if(Action = true){
+frame.add(label);
+}
+
+
+
+var tl = Attendee.all.println();
+var action = new Attendee;
+action.name = "New Action";
+Conference.all.first().attendee.add(action);
+//This allows me to add new set of data into my emf model
+/*
+/*/
+/*
+This checks if an attendee name has not been filled out, and if that is the issue it will create 
+a new attendee
+for (action in Attendee.all){
+action.~isStartAction =action.name.isEmpty().println();
+if (action.~isStartAction = true){
+var action = new Attendee;
+action.name = "New Action";
+Conference.all.first().attendee.add(action);
+}
+}
+//this allows a user interface which uses Java Syntax to be used
+var frame = new Native ("javax.swing.JFrame");
+frame.setSize(400, 400);
+//button.setVisible(true);
+//button.setText("hello");
+frame.title = "Opened from EOL";
+frame.visible = true;
+/*/
+/*
+for (action in Language.all){
+action.("English").println();
+}
+/*/ 

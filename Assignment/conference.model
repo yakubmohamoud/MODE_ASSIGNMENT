@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Conference xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="conference" xmi:id="_V-azwMjiEeaodpL7HT6dcw">
+  <attendee xmi:id="_V-ba0MjiEeaodpL7HT6dcw" name="yakub" target="_XLxXsMjiEeaodpL7HT6dcw">
+    <seat xmi:id="_XLxXsMjiEeaodpL7HT6dcw" incoming="_V-ba0MjiEeaodpL7HT6dcw"/>
+  </attendee>
+  <attendee name="robert"/>
+  <attendee name="mat"/>
+  <table xmi:id="_ZNO5IMjiEeaodpL7HT6dcw"/>
+</Conference>
